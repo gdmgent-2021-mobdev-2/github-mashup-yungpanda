@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Container from './Shared/Container';
+import SearchForm from './Components/SearchForm';
+import GithubDetail from './Components/Github/GithubDetail';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [userName, setUserName] = useState('');
+
+    return (
+        <Container>
+            <SearchForm
+                query={userName}
+                onSubmit={(query) => setUserName(query)}
+            />
+            <GithubDetail userName={userName} />
+        </Container>
+    );
 }
 
 export default App;
