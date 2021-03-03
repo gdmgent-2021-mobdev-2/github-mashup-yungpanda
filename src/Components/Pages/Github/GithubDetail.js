@@ -1,4 +1,4 @@
-import useGithubData from '../../hooks/useGithubData';
+import useGithubData from '../../../hooks/useGithubData';
 import Spinner from '../../Shared/Spinner';
 import Alert from '../../Shared/Alert';
 import GithubFollowers from './Followers/GithubFollowers';
